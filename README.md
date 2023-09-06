@@ -12,8 +12,10 @@
 - [Installation](#installation)
 - [Usage](#usage)
   - [Command Line Arguments](#command-line-arguments)
+- [Algorithm Loading](#algorithm-loading)
+- [Algorithm Listing](#algorithm-listing)
+- [Multiprocessing](#multiprocessing)
 - [Logging](#logging)
-- [Contributors](#contributors)
 - [License](#license)
 
 
