@@ -58,7 +58,12 @@ This utility is a Python script designed to rename files in a folder or an indiv
 
 3. For silent mode (suppress errors):
     ```
-    python3 file_change.py --silent
+    python3 file_change.py -s (...)
+    ```  
+
+4. For help:
+    ```
+    python3 file_change.py -h
     ```
 
 ## Logging
