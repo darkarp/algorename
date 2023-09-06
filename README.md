@@ -1,8 +1,8 @@
-# File Change Utility
+# AlgoRename
 
 [![Build Status](https://img.shields.io/badge/build-passing-green)]()
-[![GitHub release](https://img.shields.io/github/release/darkarp/file_change.svg)](https://github.com/darkarp/file_change/releases/)
-[![License](https://img.shields.io/github/license/darkarp/file_change.svg)](https://github.com/darkarp/file_change/blob/main/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/darkarp/algorename.svg)](https://github.com/darkarp/algorename/releases/)
+[![License](https://img.shields.io/github/license/darkarp/algorename.svg)](https://github.com/darkarp/algorename/blob/main/LICENSE)
 
 
 ## Table of Contents
@@ -19,8 +19,7 @@
 
 ## Introduction
 
-This utility is a Python script designed to rename files in a folder or an individual file by shifting each alphabetic character in the filenames to the left by 1.
-
+This utility is a Python script designed to rename files in a folder or an individual file based on a dynamically loaded algorithm. It utilizes multiprocessing for efficiency and can operate recursively on directories. The example algorithm shifts each alphabetic character in the filenames to the left by 1.
 
 ## Prerequisites
 
@@ -31,11 +30,11 @@ This utility is a Python script designed to rename files in a folder or an indiv
 
 1. Clone the GitHub repository.
    ```
-   git clone https://github.com/darkarp/file_change.git
+   git clone https://github.com/darkarp/algorename.git
    ```
 2. Navigate to the project directory.
    ```
-   cd file_change
+   cd algorename
    ```
 3. Install the required Python packages.
    ```
@@ -47,28 +46,55 @@ This utility is a Python script designed to rename files in a folder or an indiv
 ### Command Line Arguments
 
 1. To rename a single file:
-    ```
-    python3 file_change.py -f [path/to/your/file]
-    ```
+ ```
+ python algorename.py -f [path/to/your/file]
+ ```
 
 2. To rename all files in a directory:
-    ```
-    python3 file_change.py -d [path/to/your/directory]
-    ```
+ ```
+ python algorename.py -d [path/to/your/directory]
+ ```
 
-3. For silent mode (suppress errors):
-    ```
-    python3 file_change.py -s (...)
-    ```  
+3. To rename files recursively in a directory:
+ ```
+ python algorename.py -d [path/to/your/directory] -r
+ ```
 
-4. For help:
-    ```
-    python3 file_change.py -h
-    ```
+4. For silent mode (suppress errors):
+ ```
+ python algorename.py -s (...)
+ ```  
+
+5. To use a specific algorithm:
+ ```
+ python algorename.py -a [algorithm_name]
+ ```  
+
+6. To list available algorithms:
+ ```
+ python algorename.py -l
+ ```
+
+7. For help:
+ ```
+ python algorename.py -h
+ ```
+
+## Algorithm Loading  
+
+The script supports loading custom algorithms. Place your algorithm module under the `algorithms/` folder, and the script will be able to import it dynamically. Make sure to define a function called `apply_algorithm` within the module.
+
+## Algorithm Listing  
+
+You can list all available algorithms along with their metadata using the `-l` flag. This is useful for understanding what each algorithm does before using it.
+
+## Multiprocessing
+
+This utility uses multiprocessing to efficiently rename multiple files in a directory. It uses `concurrent.futures.ProcessPoolExecutor` to parallelize the renaming tasks.
 
 ## Logging
 
-Logging is implemented with a rotating log file mechanism to ensure that it doesn't consume too much disk space over time. The log file will be generated in the same directory as the script, named `file_changer.log`. 
+Logging is implemented with a rotating log file mechanism to ensure that it doesn't consume too much disk space over time. The log file will be generated in the same directory as the script, named `algorename.log`. 
 
 - You can set the logging verbosity level via an environment variable `FCLOG_LEVEL`, which accepts values like `DEBUG`, `INFO`, `WARNING`, `ERROR`, and `CRITICAL`.
 - You can set the log file name via an environment variable `FCLOG_NAME`. This name will be converted to lower-case.
