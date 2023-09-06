@@ -4,7 +4,6 @@
 [![GitHub release](https://img.shields.io/github/release/darkarp/file_change.svg)](https://github.com/darkarp/file_change/releases/)
 [![License](https://img.shields.io/github/license/darkarp/file_change.svg)](https://github.com/darkarp/file_change/blob/main/LICENSE)
 
----
 
 ## Table of Contents
 
@@ -17,13 +16,11 @@
 - [Contributors](#contributors)
 - [License](#license)
 
----
 
 ## Introduction
 
 This utility is a Python script designed to rename files in a folder or an individual file by shifting each alphabetic character in the filenames to the left by 1.
 
----
 
 ## Prerequisites
 
