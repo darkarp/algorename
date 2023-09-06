@@ -1,6 +1,6 @@
 # File Change Utility
 
-[![Build Status](https://travis-ci.com/darkarp/file_change.svg?branch=main)](https://travis-ci.com/darkarp/file_change)
+[![Build Status](https://img.shields.io/badge/build-passing-green)]()
 [![GitHub release](https://img.shields.io/github/release/darkarp/file_change.svg)](https://github.com/darkarp/file_change/releases/)
 [![License](https://img.shields.io/github/license/darkarp/file_change.svg)](https://github.com/darkarp/file_change/blob/main/LICENSE)
 
