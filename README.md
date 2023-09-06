@@ -31,7 +31,7 @@ This utility is a Python script designed to rename files in a folder or an indiv
 
 1. Clone the GitHub repository.
    ```
-   git clone https://github.com/your-username/file_change.git
+   git clone https://github.com/darkarp/file_change.git
    ```
 2. Navigate to the project directory.
    ```
