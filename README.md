@@ -67,17 +67,22 @@ This utility is a Python script designed to rename files in a folder or an indiv
  python algorename.py -s (...)
  ```  
 
-5. To use a specific algorithm:
+5. To not create a log file:
+ ```
+ python algorename.py -nl (...)
+ ```  
+
+6. To use a specific algorithm:
  ```
  python algorename.py -a [algorithm_name]
  ```  
 
-6. To list available algorithms:
+7. To list available algorithms:
  ```
  python algorename.py -l
  ```
 
-7. For help:
+8. For help:
  ```
  python algorename.py -h
  ```
@@ -86,13 +91,20 @@ This utility is a Python script designed to rename files in a folder or an indiv
 
 The script supports loading custom algorithms. Place your algorithm module under the `algorithms/` folder, and the script will be able to import it dynamically. Make sure to define a function called `apply_algorithm` within the module.
 
+The environment variable `FCLOG_PATH` specifies the directories where the script will look for custom algorithm modules. You can modify this by changing your environment variables or by creating a `.env` file.
+
+Example:  
+
+- Windows: `FCLOG_PATH=C:\path\to\algorithms;D:\another\path\to\algorithms`
+- Linux/Mac: `FCLOG_PATH=/path/to/algorithms:/another/path/to/algorithms`
+
 ## Algorithm Listing  
 
 You can list all available algorithms along with their metadata using the `-l` flag. This is useful for understanding what each algorithm does before using it.
 
 ## Multiprocessing
 
-This utility uses multiprocessing to efficiently rename multiple files in a directory. It uses `concurrent.futures.ProcessPoolExecutor` to parallelize the renaming tasks.
+This utility uses multithreading to efficiently rename multiple files in a directory. It uses `concurrent.futures.ThreadPoolExecutor` to speed up the renaming tasks.
 
 ## Logging
 
@@ -100,6 +112,7 @@ Logging is implemented with a rotating log file mechanism to ensure that it does
 
 - You can set the logging verbosity level via an environment variable `FCLOG_LEVEL`, which accepts values like `DEBUG`, `INFO`, `WARNING`, `ERROR`, and `CRITICAL`.
 - You can set the log file name via an environment variable `FCLOG_NAME`. This name will be converted to lower-case.
+- You can disable logging by specifying `-nl` argument.
 
 ## License
 
